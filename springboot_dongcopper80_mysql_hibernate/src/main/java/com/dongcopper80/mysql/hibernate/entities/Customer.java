@@ -42,6 +42,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.NaturalId;
 import org.hibernate.annotations.Type;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -53,7 +54,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
  */
 @Table(name = "customer",
         uniqueConstraints = {
-   @UniqueConstraint(name = "Unique_Username", columnNames = {"username"})})
+   @UniqueConstraint(name = "Unique_Username", columnNames = "username")})
 @Getter
 @Setter
 @ToString
@@ -82,7 +83,8 @@ public class Customer implements Serializable {
     @Type(type = "uuid-char")
     private UUID id;
 
-    @Column(nullable = false, unique = true)
+    @NaturalId
+    @Column(nullable = false, columnDefinition = "VARCHAR(36)")
     private String username;
 
     @Column
