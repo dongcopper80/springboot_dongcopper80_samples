@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -28,7 +26,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
     <developers>
         <developer>
             <id>dongcopper80</id>
-            <name>Nguyễn Thúc Đồng</name>
+            <name>Nguyen Thuc Dong</name>
             <email>dongcopper80@gmail.com</email>
             <url>#</url>
             <organization>#</organization>
@@ -45,7 +43,9 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
     <modules>
         <module>springboot_dongcopper80_mysql_hibernate</module>
       <module>springboot_dongcopper80_postgres_hibernate</module>
-  </modules>
+        <module>springboot_dongcopper80_websocket</module>
+        <module>springboot_dongcopper80_websocket_client</module>
+    </modules>
     <repositories>
         <repository>
             <id>central</id>
