@@ -39,5 +39,4 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/ntd/webjars/**")
                 .addResourceLocations("classpath:/META-INF/resources/webjars/");
     }
-
 }
