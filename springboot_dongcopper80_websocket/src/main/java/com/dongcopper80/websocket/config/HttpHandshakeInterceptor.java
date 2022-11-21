@@ -97,7 +97,7 @@ public class HttpHandshakeInterceptor implements HandshakeInterceptor {
         HttpServletRequest httpServletRequest = servletRequest.getServletRequest();
 
         attributes.forEach((key, value) -> {
-            System.out.println("SessionHandshakeInterceptor::beforeHandshake()   attributes Key: " + key + " Value: " + value);
+            System.out.println("SessionHandshakeInterceptor::beforeHandshake() attributes Key: " + key + " Value: " + (value == null ? "" : value.toString()));
         });
 
         HttpSession session = getSession(request);
