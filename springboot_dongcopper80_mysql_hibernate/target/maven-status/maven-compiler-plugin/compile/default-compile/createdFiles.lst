@@ -1,0 +1,7 @@
+com\dongcopper80\mysql\hibernate\MysqlHibernateApplication.class
+com\dongcopper80\mysql\hibernate\services\CustomerService.class
+com\dongcopper80\mysql\hibernate\config\HibernateXMLConf.class
+com\dongcopper80\mysql\hibernate\entities\Customer.class
+com\dongcopper80\mysql\hibernate\controller\CustomerController.class
+com\dongcopper80\mysql\hibernate\repositories\CustomerRepository.class
+com\dongcopper80\mysql\hibernate\services\impl\CustomerServiceImpl.class
