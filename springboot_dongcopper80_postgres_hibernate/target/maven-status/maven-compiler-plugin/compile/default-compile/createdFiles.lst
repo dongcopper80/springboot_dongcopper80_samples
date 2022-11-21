@@ -1,5 +1,0 @@
-com\dongcopper80\postgres\hibernate\PostgresHibernateApplication.class
-com\dongcopper80\postgres\hibernate\config\CacheLogger.class
-com\dongcopper80\postgres\hibernate\config\HibernateXMLConf.class
-com\dongcopper80\postgres\hibernate\schedule\CrawlKQXSMB.class
-com\dongcopper80\postgres\hibernate\config\EhcacheConfig.class
