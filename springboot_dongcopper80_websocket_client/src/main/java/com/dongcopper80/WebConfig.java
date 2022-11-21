@@ -26,6 +26,9 @@ package com.dongcopper80;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.resource.EncodedResourceResolver;
+import org.springframework.web.servlet.resource.GzipResourceResolver;
+import org.springframework.web.servlet.resource.PathResourceResolver;
 
 /**
  *
@@ -37,6 +40,11 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/ntd/webjars/**")
-                .addResourceLocations("classpath:/META-INF/resources/webjars/");
+                .addResourceLocations("classpath:/META-INF/resources/webjars/")
+                .setCachePeriod(3600)
+                .resourceChain(true)
+                .addResolver(new GzipResourceResolver())
+                .addResolver(new PathResourceResolver())
+                .addResolver(new EncodedResourceResolver());
     }
 }
