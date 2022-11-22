@@ -1,0 +1,15 @@
+spring:
+   redis:
+      host: 127.0.0.1
+      port: 6379
+      password: 
+      
+jwt:
+   secret: demo_jwt,demo_redis
+   # HeaderKey
+   tokenHeader: Authorization
+   # Token
+   tokenPrefix: Bearer
+   expiration: 300
+   refreshTime: 7
+   antMatchers: /login/**,/register/**,/static/**

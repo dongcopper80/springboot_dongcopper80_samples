@@ -45,6 +45,7 @@
       <module>springboot_dongcopper80_postgres_hibernate</module>
         <module>springboot_dongcopper80_websocket</module>
         <module>springboot_dongcopper80_websocket_client</module>
+        <module>springboot_dongcopper80_ws_security</module>
     </modules>
     <repositories>
         <repository>

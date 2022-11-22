@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+         name="CM1"
+         updateCheck="true"
+         monitoring="autodetect"
+         dynamicConfig="true"
+         maxBytesLocalHeap="500M">
+    
+    <diskStore path="java.io.tmpdir/ehcache"/>
+    
+    <defaultCache name="cacheDefault" eternal="false" overflowToDisk="true" diskPersistent="true"
+                  maxBytesLocalDisk="100m" memoryStoreEvictionPolicy="LRU" statistics="true"
+                  timeToIdleSeconds="300" timeToLiveSeconds="600">
+
+    </defaultCache>
+    
+    <cache name="default-update-timestamps-region">
+        
+    </cache>
+    <cache name="default-query-results-region">
+        
+    </cache>
+
+    <cache name="nodeCache" eternal="true" maxBytesLocalDisk="100m" 
+           overflowToDisk="true" diskPersistent="true">
+        
+    </cache>
+    <cache name="edgeCache" eternal="true" maxBytesLocalDisk="100m" 
+           overflowToDisk="true" diskPersistent="true">
+        
+    </cache>
+    <cache name="socialGraphCache" eternal="true" maxBytesLocalDisk="100m" 
+           overflowToDisk="true" diskPersistent="true">
+        
+    </cache>
+    
+    <cache name="com.dongcopper80.websocket.entities.SysUser" diskPersistent="true"
+           maxBytesLocalDisk="10m" eternal="false" timeToIdleSeconds="300" timeToLiveSeconds="600">
+        
+    </cache>
+    <cache name="com.dongcopper80.websocket.entities.SysRole" diskPersistent="true"
+           maxBytesLocalDisk="10m" eternal="false" timeToIdleSeconds="300" timeToLiveSeconds="600">
+        
+    </cache>
+    <cache name="com.dongcopper80.websocket.entities.SysAuth" diskPersistent="true"
+           maxBytesLocalDisk="10m" eternal="false" timeToIdleSeconds="300" timeToLiveSeconds="600">
+        
+    </cache>
+        
+</ehcache>
