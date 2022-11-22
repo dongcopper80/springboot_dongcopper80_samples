@@ -46,10 +46,10 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/message")
-                .addInterceptors(new IpHandshakeInterceptor(), handShakeInterceptor())
+                //.addInterceptors(new IpHandshakeInterceptor(), handShakeInterceptor())
                 //.setAllowedOrigins("goingo.com")
                 .setAllowedOriginPatterns("*")
-                .setHandshakeHandler(new UserHandshakeHandler())
+                //.setHandshakeHandler(new UserHandshakeHandler())
                 .withSockJS();
     }
 

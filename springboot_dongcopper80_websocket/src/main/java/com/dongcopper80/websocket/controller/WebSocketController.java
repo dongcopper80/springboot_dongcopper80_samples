@@ -25,13 +25,16 @@ package com.dongcopper80.websocket.controller;
 
 import com.google.gson.Gson;
 import java.util.Map;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
+import org.springframework.messaging.handler.annotation.SendTo;
 //import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.util.HtmlUtils;
 
 /**
  *
@@ -39,10 +42,10 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 public class WebSocketController {
-
+    
     @Autowired
     private SimpMessageSendingOperations messagingTemplate;
-
+    
     @MessageMapping("/message")
     //@SendTo("/topic/messages")
     public void processMessageFromClient(@Payload String message, SimpMessageHeaderAccessor headerAccessor) throws Exception {
@@ -50,5 +53,13 @@ public class WebSocketController {
         System.out.println(sessionId);
         headerAccessor.setSessionId(sessionId);
         messagingTemplate.convertAndSend("/topic/reply", new Gson().fromJson(message, Map.class).get("name"));
+    }
+    
+    @MessageMapping("/hello")
+    @SendTo("/topic/greetings")
+    public String greeting(String message) throws Exception {
+        Thread.sleep(1000); // simulated delay
+        JSONObject jsonObject = new JSONObject(message);
+        return "Hello, " + HtmlUtils.htmlEscape(jsonObject.getString("name")) + "!";
     }
 }

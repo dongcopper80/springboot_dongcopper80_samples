@@ -97,13 +97,13 @@ public class HttpHandshakeInterceptor implements HandshakeInterceptor {
         HttpServletRequest httpServletRequest = servletRequest.getServletRequest();
 
         attributes.forEach((key, value) -> {
-            System.out.println("SessionHandshakeInterceptor::beforeHandshake() attributes Key: " + key + " Value: " + (value == null ? "" : value.toString()));
+            System.out.println("SessionHandshakeInterceptor::beforeHandshake() attributes Key: " + (key == null ? "" : key) + " Value: " + (value == null ? "" : value.toString()));
         });
 
         HttpSession session = getSession(request);
-        
+
         if (session != null) {
-            
+
             if (isCopyHttpSessionId()) {
                 attributes.put(HTTP_SESSION_ID_ATTR_NAME, session.getId());
             }
@@ -115,12 +115,12 @@ public class HttpHandshakeInterceptor implements HandshakeInterceptor {
                 }
             }
         }
-        
+
         return true;
     }
-    
+
     private HttpSession getSession(ServerHttpRequest request) {
-        
+
         if (request instanceof ServletServerHttpRequest serverRequest) {
             return serverRequest.getServletRequest().getSession(isCreateSession());
         }
