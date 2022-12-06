@@ -31,6 +31,7 @@ import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.Index;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -43,11 +44,16 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 /**
- *
+ * ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+ * to
+ * ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COLLATE=utf8mb4_unicode_ci;
  * @author Nguyễn Thúc Đồng (dongcopper80)
  */
 @Data
-@Table(name = "sys_user")
+@Table(name = "sys_user", indexes = {
+    @Index(name = "username_idx", columnList = "username", unique = true),
+    @Index(name = "email_idx", columnList = "email", unique = true),
+})
 @EntityListeners(AuditingEntityListener.class)
 @Entity
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.TRANSACTIONAL)
