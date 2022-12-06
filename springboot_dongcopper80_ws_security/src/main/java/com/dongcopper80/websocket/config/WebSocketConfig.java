@@ -23,7 +23,6 @@
  */
 package com.dongcopper80.websocket.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
@@ -42,9 +41,6 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 @Configuration
 @EnableWebSocketMessageBroker
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
-    
-    @Autowired
-    WebSocketAuthInterceptor webSocketAuthInterceptor;
     
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
