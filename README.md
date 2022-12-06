@@ -20,3 +20,17 @@ https://hub.docker.com/_/openjdk/tags
 
 http://cloudurable.com/blog/kafka-architecture/index.html
 
+https://en.wikipedia.org/wiki/Apache_Hadoop
+
+https://en.wikipedia.org/wiki/Apache_Spark
+
+https://flume.apache.org/
+
+https://ibmi-oss-docs.readthedocs.io/en/latest/nginx/README.html
+
+https://github.com/hakanolgun/eCommerce
+
+https://chakra-ui.com/
+
+https://openchakra.app/
+

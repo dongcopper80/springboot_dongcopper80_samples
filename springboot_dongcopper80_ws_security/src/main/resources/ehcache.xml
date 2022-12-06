@@ -47,5 +47,8 @@
            maxBytesLocalDisk="10m" eternal="false" timeToIdleSeconds="300" timeToLiveSeconds="600">
         
     </cache>
+    <cache name="com.dongcopper80.websocket.entities.SysRefreshToken" diskPersistent="true"
+           maxBytesLocalDisk="10m" eternal="false" timeToIdleSeconds="300" timeToLiveSeconds="600">
         
+    </cache>
 </ehcache>

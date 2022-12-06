@@ -24,22 +24,11 @@
 package com.dongcopper80.websocket.entities;
 
 import java.io.Serializable;
-import java.util.List;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 import lombok.Data;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 /**
@@ -47,37 +36,12 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
  * @author Nguyễn Thúc Đồng (dongcopper80)
  */
 @Data
-@Table(name = "sys_user")
+@Table(name = "sys_refresh_token")
 @EntityListeners(AuditingEntityListener.class)
 @Entity
-@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.TRANSACTIONAL)
-public class SysUser implements Serializable {
-
+public class SysRefreshToken implements Serializable {
+    
     @Id
     private Long id;
-    
-    @NotBlank
-    @Size(max = 20)
-    private String username;
-    
-    @NotBlank
-    @Size(max = 50)
-    private String password;
-    
-    @NotBlank
-    @Size(max = 50)
-    @Email
-    private String email;
-    
-    @Column(columnDefinition = "integer default 0")
-    private Integer status;//0-active, 1: delete, 2: deactive
-
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(name = "sys_user_role",
-            joinColumns = {
-                @JoinColumn(name = "sys_user", referencedColumnName = "id")},
-            inverseJoinColumns = {
-                @JoinColumn(name = "sys_role", referencedColumnName = "id")}
-    )
-    private List<SysRole> sysRoles;
+    private String token;
 }
