@@ -34,3 +34,4 @@ https://chakra-ui.com/
 
 https://openchakra.app/
 
+https://thorben-janssen.com/jdbc-connection-and-dialect-in-hibernate/
