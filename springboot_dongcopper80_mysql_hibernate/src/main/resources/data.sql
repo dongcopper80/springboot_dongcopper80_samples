@@ -1,2 +1,6 @@
+SET SQL_SAFE_UPDATES = 0 ^;
+DELETE FROM `sys_role` ^;
+SET SQL_SAFE_UPDATES = 1 ^;
+
 INSERT IGNORE INTO `sys_role`(`roleName`) VALUES('ROLE_USER') ^;
 INSERT IGNORE INTO `sys_role`(`roleName`) VALUES('ROLE_ADMIN') ^;

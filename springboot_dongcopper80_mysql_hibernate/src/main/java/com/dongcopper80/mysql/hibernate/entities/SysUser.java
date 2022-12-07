@@ -40,6 +40,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -50,6 +51,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
  * @author Nguyễn Thúc Đồng (dongcopper80)
  */
 @Data
+@EqualsAndHashCode(callSuper=false)
 @Table(name = "sys_user", indexes = {
     @Index(name = "username_idx", columnList = "username", unique = true),
     @Index(name = "email_idx", columnList = "email", unique = true),
@@ -57,7 +59,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @EntityListeners(AuditingEntityListener.class)
 @Entity
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.TRANSACTIONAL)
-public class SysUser implements Serializable {
+public class SysUser extends DateAudit implements Serializable {
 
     @Id
     private Long id;
