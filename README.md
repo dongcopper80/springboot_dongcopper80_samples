@@ -35,3 +35,5 @@ https://chakra-ui.com/
 https://openchakra.app/
 
 https://thorben-janssen.com/jdbc-connection-and-dialect-in-hibernate/
+
+https://github.com/callicoder/spring-security-react-ant-design-polls-app
