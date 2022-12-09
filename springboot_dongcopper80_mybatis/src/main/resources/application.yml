@@ -1,0 +1,49 @@
+spring:
+  datasource-primary:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://localhost:3306/goingo.com?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+    username: root
+    password: 
+    platform: mysql
+    hikari:
+      idle-timeout: 10000
+      maximum-pool-size: 10
+      minimum-idle: 5
+      pool-name: PrimaryHikariPool
+      packages-to-scan: com.dongcopper80.mybatis.model
+      hibernate-dialect: org.hibernate.dialect.MySQL8Dialect
+      hbm2ddl-auto: update
+      ddl-auto: update
+      show-sql: true
+      cachePrepStmts: true
+      prepStmtCacheSize: 25000
+      prepStmtCacheSqlLimit: 20048
+      useServerPrepStmts: true
+      initializationFailFast: true
+      implicitCachingEnabled: true
+      maxStatements: 250
+
+  datasource-second:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://localhost:3306/goingo.com?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+    username: root
+    password: 
+    platform: mysql
+    hikari:
+      idle-timeout: 10000
+      maximum-pool-size: 10
+      minimum-idle: 5
+      pool-name: SecondHikariPool
+      packages-to-scan: com.dongcopper80.mybatis.model
+      hibernate-dialect: org.hibernate.dialect.MySQL8Dialect
+      hbm2ddl-auto: update
+      ddl-auto: update
+      show-sql: true
+      cachePrepStmts: true
+      prepStmtCacheSize: 25000
+      prepStmtCacheSqlLimit: 20048
+      useServerPrepStmts: true
+      initializationFailFast: true
+      implicitCachingEnabled: true
+      maxStatements: 250
+      
