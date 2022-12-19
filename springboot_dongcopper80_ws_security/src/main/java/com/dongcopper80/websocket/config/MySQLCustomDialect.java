@@ -30,12 +30,12 @@ import org.hibernate.dialect.MySQL8Dialect;
  * @author Nguyễn Thúc Đồng (dongcopper80)
  */
 public class MySQLCustomDialect extends MySQL8Dialect {
-    
-    
+
+
     @Override
     public String getTableTypeString() {
-        //It depends on the collation of the field - 
-        //if it's _ci (case insensitive) or _cs (case sensitive). 
+        //It depends on the collation of the field -
+        //if it's _ci (case insensitive) or _cs (case sensitive).
         //The unique index would apply accordingly.
         return " ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COLLATE=utf8mb4_unicode_ci";
     }

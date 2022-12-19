@@ -25,6 +25,7 @@ package com.dongcopper80.websocket.entities;
 
 import java.io.Serializable;
 import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -39,9 +40,11 @@ import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import lombok.Data;
+
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import lombok.Data;
 
 /**
  * ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -61,20 +64,20 @@ public class SysUser implements Serializable {
 
     @Id
     private Long id;
-    
+
     @NotBlank
     @Size(max = 20)
     private String username;
-    
+
     @NotBlank
     @Size(max = 50)
     private String password;
-    
+
     @NotBlank
     @Size(max = 50)
     @Email
     private String email;
-    
+
     @Column(columnDefinition = "integer default 0")
     private Integer status;//0-active, 1: delete, 2: deactive
 

@@ -23,16 +23,24 @@
  */
 package com.dongcopper80.websocket.config;
 
-import com.dongcopper80.websocket.repository.SysRefreshTokenRepository;
-import com.dongcopper80.websocket.service.UserDetailsImpl;
+import java.util.Date;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import io.jsonwebtoken.*;
-import java.util.Date;
+
+import com.dongcopper80.websocket.repository.SysRefreshTokenRepository;
+import com.dongcopper80.websocket.service.UserDetailsImpl;
+
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.MalformedJwtException;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.SignatureException;
+import io.jsonwebtoken.UnsupportedJwtException;
 
 /**
  *

@@ -48,6 +48,7 @@
         <module>springboot_dongcopper80_ws_security</module>
         <module>springboot_dongcopper80_oracle_hibernate</module>
         <module>springboot_dongcopper80_olingo_odata</module>
+        <module>springboot_dongcopper80_mybatis_demo</module>
     </modules>
     <repositories>
         <repository>

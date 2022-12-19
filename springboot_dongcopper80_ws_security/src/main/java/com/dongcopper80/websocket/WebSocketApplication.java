@@ -37,7 +37,7 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 public class WebSocketApplication {
     public static void main(String[] args) {
         System.out.println(System.getProperty("java.io.tmpdir"));
-        
+
         SpringApplication.run(WebSocketApplication.class, args);
     }
 }

@@ -23,10 +23,12 @@
  */
 package com.dongcopper80.websocket.repository;
 
-import com.dongcopper80.websocket.entities.SysUser;
 import java.util.Optional;
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+
+import com.dongcopper80.websocket.entities.SysUser;
 
 /**
  *
@@ -34,7 +36,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface SysUserRepository extends CrudRepository<SysUser, Long>{
-    
+
     Optional<SysUser> findByUsername(String username);
 
     Boolean existsByUsername(String username);

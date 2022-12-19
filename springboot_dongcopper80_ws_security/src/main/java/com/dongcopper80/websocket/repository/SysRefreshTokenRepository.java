@@ -23,9 +23,10 @@
  */
 package com.dongcopper80.websocket.repository;
 
-import com.dongcopper80.websocket.entities.SysRefreshToken;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+
+import com.dongcopper80.websocket.entities.SysRefreshToken;
 
 /**
  *

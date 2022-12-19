@@ -23,15 +23,17 @@
  */
 package com.dongcopper80.websocket.service;
 
-import com.dongcopper80.websocket.entities.SysUser;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import com.dongcopper80.websocket.entities.SysUser;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  *
@@ -50,10 +52,10 @@ public class UserDetailsImpl implements UserDetails {
 
     private Collection<? extends GrantedAuthority> authorities;
 
-    public UserDetailsImpl(Long id, String username, 
+    public UserDetailsImpl(Long id, String username,
             String email, String password,
             Collection<? extends GrantedAuthority> authorities) {
-        
+
         this.id = id;
         this.username = username;
         this.email = email;
@@ -62,7 +64,7 @@ public class UserDetailsImpl implements UserDetails {
     }
 
     public static UserDetailsImpl build(SysUser user) {
-        
+
         List<GrantedAuthority> authorities = user.getSysRoles().stream()
                 .map(role -> new SimpleGrantedAuthority(role.getRoleName()))
                 .collect(Collectors.toList());
@@ -120,17 +122,17 @@ public class UserDetailsImpl implements UserDetails {
 
     @Override
     public boolean equals(Object o) {
-        
+
         if (this == o) {
             return true;
         }
-        
+
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        
+
         UserDetailsImpl user = (UserDetailsImpl) o;
-        
+
         return Objects.equals(id, user.id);
     }
 }
